@@ -19,6 +19,8 @@ const precios = [
   100,
 ];
 
+
+
 const presupuesto = {
   precioTotal: 0,
 };
@@ -47,3 +49,10 @@ function obtenerPresupuesto() {
 function guardarDatos() {
   sessionStorage.email = document.getElementById("email").value;
 }
+
+var string = '{"nombre": "luna","apellido": "bartolozzi"}';
+    var objeto = JSON.parse(string);
+console.log(objeto.nombre);
+    
+
+
