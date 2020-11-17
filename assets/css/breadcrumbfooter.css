@@ -891,6 +891,8 @@ fieldset {
   font-size: 2rem;
 }
 
+
+
 /* --------------------------media query------------- */
 
 @media (max-width: 500) {
@@ -939,8 +941,7 @@ fieldset {
   }
 }
 
-@media (min-width:510) and (max-width:850){
-
+@media (min-width: 510) and (max-width: 850) {
   .presupuesto-button {
     height: 70rem;
     width: auto;
@@ -957,7 +958,4 @@ fieldset {
     gap: 2px;
     grid-template-columns: repeat(2);
   }
-
-  
-
 }
