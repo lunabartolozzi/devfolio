@@ -36,7 +36,6 @@ function obtenerPresupuesto() {
     posicion++;
   }
   document.getElementById('precio').innerHTML = presupuesto.precioTotal;
-}
 
 
 
@@ -47,7 +46,7 @@ function obtenerPresupuesto() {
 
 
 
-
+  
 
   if (sessionStorage.email != undefined) {
     document.getElementById('datos').innerHTML =
