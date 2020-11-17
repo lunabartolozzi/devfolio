@@ -24,9 +24,6 @@ const presupuesto = {
 };
 
 function obtenerPresupuesto() {
-  var nombreProyecto = prompt('Ingrese el nombre de su proyecto');
-  alert('Gracias por el pedido para ' + nombreProyecto);
-
   var checkboxes = document.getElementsByName('checkbox');
   var posicion = 0;
   for (var checkbox of checkboxes) {
