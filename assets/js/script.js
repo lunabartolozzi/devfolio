@@ -36,6 +36,18 @@ function obtenerPresupuesto() {
     posicion++;
   }
   document.getElementById('precio').innerHTML = presupuesto.precioTotal;
+}
+
+
+
+
+
+
+
+
+
+
+
 
   if (sessionStorage.email != undefined) {
     document.getElementById('datos').innerHTML =
