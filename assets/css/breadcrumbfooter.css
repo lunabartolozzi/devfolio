@@ -891,7 +891,40 @@ fieldset {
   font-size: 2rem;
 }
 
+/* ----------INFO--------- */
+.info {
+  width: 2rem;
+  height: 2rem;
+}
 
+.button-info {
+  background-color: transparent;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  position: relative;
+  margin-left: -2rem;
+  margin-top: 2.5rem;
+}
+
+.button-info:hover {
+  transform: translate(5px);
+}
+.content-text-info {
+  width: 10rem;
+  height: 5rem;
+  background-color: #4c1e51af;
+  display: none;
+  border-radius: 1rem;
+  margin-top: 0.5rem;
+}
+.info-text {
+  color: black;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+}
 
 /* --------------------------media query------------- */
 

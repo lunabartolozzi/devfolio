@@ -24,7 +24,7 @@ const presupuesto = {
 };
 
 function obtenerPresupuesto() {
-  var checkboxes = document.getElementsByName('checkbox');
+  var checkboxes = document.getElementsByName("checkbox");
   var posicion = 0;
   for (var checkbox of checkboxes) {
     if (checkbox.checked) {
@@ -32,21 +32,28 @@ function obtenerPresupuesto() {
     }
     posicion++;
   }
-  document.getElementById('precio').innerHTML = presupuesto.precioTotal;
+  document.getElementById("precio").innerHTML = presupuesto.precioTotal;
 
   if (sessionStorage.email != undefined) {
-    document.getElementById('datos').innerHTML =
-      'Email: ' + sessionStorage.email;
+    document.getElementById("datos").innerHTML =
+      "Email: " + sessionStorage.email;
   } else {
-    document.getElementById('datos').innerHTML = 'No has introducido tu email';
+    document.getElementById("datos").innerHTML = "No has introducido tu email";
   }
 }
 
 function guardarDatos() {
-  sessionStorage.email = document.getElementById('email').value;
+  sessionStorage.email = document.getElementById("email").value;
 }
 
-$('#boton').click(function () {
-  nombreProyecto = prompt('Ingresa el nombre de tu proyecto');
-  alert('Muchas gracias por su pedido ' + nombreProyecto);
+$("#boton").click(function () {
+  nombreProyecto = prompt("Ingresa el nombre de tu proyecto");
+  alert("Muchas gracias por su pedido " + nombreProyecto);
+  localStorage.setItem("#boton", nombreProyecto);
+  console.log(nombreProyecto);
 });
+
+$(".button-info").click(function () {
+  $(".content-text-info").show();
+});
+
