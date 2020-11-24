@@ -46,6 +46,7 @@ function guardarDatos() {
   sessionStorage.email = document.getElementById("email").value;
 }
 
+
 $("#boton").click(function () {
   nombreProyecto = prompt("Ingresa el nombre de tu proyecto");
   alert("Muchas gracias por su pedido " + nombreProyecto);
@@ -54,6 +55,10 @@ $("#boton").click(function () {
 });
 
 $(".button-info").click(function () {
-  $(".content-text-info").show();
+if ($('.content-text-info').css('display') === "none") {
+    $('.content-text-info').show()
+  } else {
+    $('.content-text-info').hide()
+  }
 });
 
