@@ -1,3 +1,32 @@
+$(document).ready(function () {
+  $.getJSON(
+    "https://raw.githubusercontent.com/lunabartolozzi/devfolio/master/archivo.json",
+    function (data) {
+      // var arrayDatos = data.filter((objeto) => objeto.checkbox == checkbox);
+
+      $.each(data, function (id, objeto) {
+        $("#checkbox-container").prepend(
+          `<div class="checkbox-wrapper">
+          <input
+              class="checkbox"
+              type="checkbox"
+              id="checkbox` +
+            id +
+            `"
+            name="checkbox"
+            /> <label class="label" for="checkbox` +
+            id +
+            `">
+              ` +
+            objeto.checkbox +
+            `
+            </label>
+          </div>`
+        );
+      });
+    }
+  );
+});
 const precios = [
   100,
   200,
@@ -46,7 +75,6 @@ function guardarDatos() {
   sessionStorage.email = document.getElementById("email").value;
 }
 
-
 $("#boton").click(function () {
   nombreProyecto = prompt("Ingresa el nombre de tu proyecto");
   alert("Muchas gracias por su pedido " + nombreProyecto);
@@ -55,10 +83,9 @@ $("#boton").click(function () {
 });
 
 $(".button-info").click(function () {
-if ($('.content-text-info').css('display') === "none") {
-    $('.content-text-info').show()
+  if ($(".content-text-info").css("display") === "none") {
+    $(".content-text-info").show();
   } else {
-    $('.content-text-info').hide()
+    $(".content-text-info").hide();
   }
 });
-

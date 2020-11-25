@@ -1,10 +1,14 @@
 [
   {
-    "checkbox": "oneepage",
-    "costo": "100"
+    "checkbox": "Una sola sección (onepage)"
   },
   {
-    "checkbox": "dos secciones",
-    "costo": "200"
+    "checkbox": "dos a cuatro secciones"
+  },
+  {
+    "checkbox": "+ cinco secciones"
+  },
+  {
+    "checkbox": "Incluir servicio de diseño web"
   }
 ]
