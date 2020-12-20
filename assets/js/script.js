@@ -28,33 +28,33 @@ $(document).ready(function () {
     });
   }
 
-  // $.getJSON(
-  //   "https://raw.githubusercontent.com/lunabartolozzi/devfolio/master/archivo.json",
-  //   function (data) {
-  //     // var arrayDatos = data.filter((objeto) => objeto.checkbox == checkbox);
+ $.getJSON(
+   "https://raw.githubusercontent.com/lunabartolozzi/devfolio/master/archivo.json",
+   function (data) {
+    var arrayDatos = data.filter((objeto) => objeto.checkbox == checkbox);
 
-  //     $.each(data, function (id, objeto) {
-  //       $("#checkbox-container").prepend(
-  //         `<div class="checkbox-wrapper">
-  //         <input
-  //             class="checkbox"
-  //             type="checkbox"
-  //             id="checkbox` +
-  //           id +
-  //           `"
-  //           name="checkbox"
-  //           /> <label class="label" for="checkbox` +
-  //           id +
-  //           `">
-  //             ` +
-  //           objeto.checkbox +
-  //           `
-  //           </label>
-  //         </div>`
-  //       );
-  //     });
-  //   }
-  // );
+     $.each(data, function (id, objeto) {
+       $("#checkbox-container").prepend(
+         `<div class="checkbox-wrapper">
+         <input
+             class="checkbox"
+             type="checkbox"
+             id="checkbox` +
+           id +
+           `"
+           name="checkbox"
+           /> <label class="label" for="checkbox` +
+           id +
+           `">
+             ` +
+           objeto.checkbox +
+           `
+           </label>
+         </div>`
+       );
+     });
+   }
+ );
   $(".checkbox").change(function () {
     let idCheckbox = $(this).attr("id");
     let valorCheckbox = $(this).is(":checked");
