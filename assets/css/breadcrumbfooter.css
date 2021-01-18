@@ -926,6 +926,14 @@ fieldset {
   padding: 0.5rem;
 }
 
+
+/* -----------diploma------------ */
+.img-diploma{
+  width: 35rem;
+  height: 25rem;
+ 
+}
+
 /* --------------------------media query------------- */
 
 @media (max-width: 500) {
@@ -992,3 +1000,4 @@ fieldset {
     grid-template-columns: repeat(2);
   }
 }
+
