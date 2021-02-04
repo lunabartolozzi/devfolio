@@ -933,7 +933,11 @@ fieldset {
   height: 25rem;
  
 }
-
+.grid-container{
+  display: grid; 
+ grid-template-columns: auto auto;
+ column-gap: 2rem;
+}
 /* --------------------------media query------------- */
 
 @media (max-width: 500) {
@@ -981,6 +985,9 @@ fieldset {
     margin-left: 4rem;
   }
 }
+
+
+/* ------------------------------ */
 
 @media (min-width: 510) and (max-width: 850) {
   .presupuesto-button {
