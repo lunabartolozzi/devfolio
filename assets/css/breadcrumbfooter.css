@@ -470,7 +470,7 @@ h6 {
   font-size: 2rem;
 }
 
-/* ----------------------SOBRE MI--------------- */
+/* ----------------------sobre mí--------------- */
 
 .section-tittle h2 {
   font-size: 44px;
@@ -926,9 +926,21 @@ fieldset {
   padding: 0.5rem;
 }
 
+
+/* -----------diploma------------ */
+.img-diploma{
+  width: 35rem;
+  height: 25rem;
+ 
+}
+.grid-container{
+  display: grid; 
+ grid-template-columns: auto auto auto;
+ column-gap: 2rem;
+}
 /* --------------------------media query------------- */
 
-@media (max-width: 500) {
+@media (max-width: 480px) {
   .presupuesto-button {
     height: 70rem;
   }
@@ -953,8 +965,8 @@ fieldset {
   .imagen {
     width: 30rem;
     height: 30rem;
-    vertical-align: bottom;
-    margin-left: auto;
+    justify-self: center;
+   
   }
 
   .text-img {
@@ -972,9 +984,34 @@ fieldset {
     padding-left: 4rem;
     margin-left: 4rem;
   }
+
+  .grid-container{
+ 
+   grid-template-columns:  auto;
+   text-align-last: center;
+   row-gap: 2rem;
+  }
+
+.text-area{
+  width: auto;
+  
+}
+.text-img {
+  gap: 2px;
+  grid-template-columns: auto;
+}
+.icons{
+  justify-content: center;
+  margin: 0;
+padding: inherit;
 }
 
-@media (min-width: 510) and (max-width: 850) {
+}
+
+
+/* ------------------------------ */
+
+@media (min-width: 510px) and (max-width: 850px) {
   .presupuesto-button {
     height: 70rem;
     width: auto;
@@ -991,4 +1028,6 @@ fieldset {
     gap: 2px;
     grid-template-columns: repeat(2);
   }
+  
 }
+

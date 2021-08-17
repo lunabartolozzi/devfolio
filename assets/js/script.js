@@ -1,31 +1,65 @@
 $(document).ready(function () {
-  $.getJSON(
-    "https://raw.githubusercontent.com/lunabartolozzi/devfolio/master/archivo.json",
-    function (data) {
-      // var arrayDatos = data.filter((objeto) => objeto.checkbox == checkbox);
-
-      $.each(data, function (id, objeto) {
-        $("#checkbox-container").prepend(
-          `<div class="checkbox-wrapper">
-          <input
-              class="checkbox"
-              type="checkbox"
-              id="checkbox` +
-            id +
-            `"
-            name="checkbox"
-            /> <label class="label" for="checkbox` +
-            id +
-            `">
-              ` +
-            objeto.checkbox +
-            `
-            </label>
-          </div>`
-        );
-      });
-    }
+  const checkboxes = document.getElementsByName("checkbox");
+  const arrayCheckboxes = Array.from(checkboxes);
+  const isTrue = arrayCheckboxes.some(
+    (element) => localStorage.getItem(element.id) == "true"
   );
+  if (isTrue) {
+    Swal.fire({
+      title: "Queres continuar con tu presupuesto anterior?",
+      showDenyButton: true,
+      confirmButtonText: `Si`,
+      denyButtonText: `No`,
+      customClass: {
+        confirmButton: "order-2",
+        denyButton: "order-3",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        for (var checkbox of checkboxes) {
+          let obtenerValor = localStorage.getItem(checkbox.id);
+          if (obtenerValor == "true") {
+            checkbox.checked = true;
+          }
+        }
+      } else if (result.isDenied) {
+        localStorage.clear();
+      }
+    });
+  }
+
+ $.getJSON(
+   "https://raw.githubusercontent.com/lunabartolozzi/devfolio/master/archivo.json",
+   function (data) {
+    var arrayDatos = data.filter((objeto) => objeto.checkbox == checkbox);
+
+     $.each(data, function (id, objeto) {
+       $("#checkbox-container").prepend(
+         `<div class="checkbox-wrapper">
+         <input
+             class="checkbox"
+             type="checkbox"
+             id="checkbox` +
+           id +
+           `"
+           name="checkbox"
+           /> <label class="label" for="checkbox` +
+           id +
+           `">
+             ` +
+           objeto.checkbox +
+           `
+           </label>
+         </div>`
+       );
+     });
+   }
+ );
+  $(".checkbox").change(function () {
+    let idCheckbox = $(this).attr("id");
+    let valorCheckbox = $(this).is(":checked");
+    localStorage.setItem(idCheckbox, valorCheckbox);
+  });
 });
 const precios = [
   100,
@@ -62,6 +96,7 @@ function obtenerPresupuesto() {
     posicion++;
   }
   document.getElementById("precio").innerHTML = presupuesto.precioTotal;
+  presupuesto.precioTotal = 0;
 
   if (sessionStorage.email != undefined) {
     document.getElementById("datos").innerHTML =
